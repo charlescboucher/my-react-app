@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: kubernetes-demo
-        image: ghcr.io/charlescboucher/my-react-app:main
+        image: nginx:1.16
         ports:
         - containerPort: 80
 ---
