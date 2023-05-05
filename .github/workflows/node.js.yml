@@ -68,3 +68,19 @@ jobs:
             push: true
             tags: ${{ steps.meta.outputs.tags }}
             labels: ${{ steps.meta.outputs.labels }}
+  deploy:
+      runs-on: ubuntu-latest
+      name: Deploy to minikube
+      steps:
+      - uses: actions/checkout@v2
+      - name: Start minikube
+        uses: medyagh/setup-minikube@master
+      - name: CLuster Check
+        run: kubectl get pods     
+      - name: Deploy app to minikube
+        run: |
+          kubectl apply -f kubernetes/deployment.yaml
+          kubectl get all
+      - name: Url Check
+        run: |
+          minikube service list
