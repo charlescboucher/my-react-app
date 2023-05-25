@@ -1,4 +1,4 @@
-name: Chrome
+name: Cypress Chrome ci
 
 on: push
 
