@@ -3,7 +3,7 @@ name: Cypress Chrome ci
 on: push
 
 jobs:
-  chrome:
+  CypressTest:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
